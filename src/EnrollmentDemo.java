@@ -7,7 +7,7 @@ public class EnrollmentDemo {
         Student stu3=new Student("3","Yiğit",3.90f);
         Student stu4=new Student("4","Deniz",3.13f);
         Student stu5=new Student("5","Mustafa",1.9f);
-        Student stu6=new Student("6","Ege",1.7f);
+        Student stu6=new Student("6","Ege Kutan",1.7f);
         Student stu7=new Student("7","Ege",2.0f);
         Student stu8=new Student("8","Ege",1.5f);
         Student stu9=new Student("9","Ege",1.3f);
@@ -42,8 +42,9 @@ public class EnrollmentDemo {
         //c1.displayEnrolledStudents();
 
         //c1.removeStudentByID("20250602216");
+        ArrayList<Student> list1=new ArrayList<>();
 
-        c1.searchByName("ege");
+       list1=c1.searchByName("ege");
         //stu1.printInfo();
         //stu2.printInfo();
         //stu3.printInfo();

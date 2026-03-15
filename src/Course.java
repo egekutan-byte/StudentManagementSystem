@@ -44,34 +44,28 @@ public class Course {
     }
 
     public void filterProbation(ArrayList<Student> enrolledStudents){
-        for (int i = 0; i < enrolledStudents.size(); i++) {
+        for (int i =enrolledStudents.size()-1; i>0; i--) {
             if(enrolledStudents.get(i).getGpa()<2.0){
-                enrolledStudents.remove(enrolledStudents.get(i));
                 probationList.add(enrolledStudents.get(i));
+                enrolledStudents.remove(enrolledStudents.get(i));
             }
         }
     }
 
     public ArrayList<Student> searchByName(String keyword){
         ArrayList<Student> results=new ArrayList<>();
-        ArrayList<Student> emptyList=new ArrayList<>();
         for (int i = 0; i <enrolledStudents.size(); i++) {
-            if(enrolledStudents.get(i).getName().equalsIgnoreCase(keyword)){
+            if(enrolledStudents.get(i).getName().toLowerCase().contains(keyword.toLowerCase())){
                 results.add(enrolledStudents.get(i));
             }
         }
         for (int i = 0; i <probationList.size(); i++) {
-            if(probationList.get(i).getName().equalsIgnoreCase(keyword)){//contains yazınca çalışmadı kod
+            if(probationList.get(i).getName().toLowerCase().contains(keyword.toLowerCase())){//contains yazınca çalışmadı kod
                 results.add(probationList.get(i));
             }
         }
-        if(!results.isEmpty()){
-            for (int i = 0; i < results.size(); i++) {
-                System.out.println(results.get(i));
-            }
-            return results;
-        }else{
-            return emptyList;
-        }
+
+        return results;
+
     }
 }
